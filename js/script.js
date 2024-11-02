@@ -5,16 +5,28 @@ const squareTemp = document.querySelector(".square-temp");
 let num = 1;
 
 const addMoreSquares = () => {
-	const square = document.createElement("div");
-	square.classList.add("square");
+	const square = squareTemp.content.cloneNode(true);
 
-	square.innerHTML = `
-        <div class="square">
-            <p class="square-number">${num}</p>
-        </div>`;
+	square.querySelector(".square-number").textContent = num;
+	// square.querySelector("h1").textContent = "😍";
 
 	wrapper.appendChild(square);
+
 	num++;
 };
 
 btn.addEventListener("click", addMoreSquares);
+
+
+// const addMoreSquares = () => {
+// 	const square = document.createElement("div");
+// 	square.classList.add("square");
+
+// 	square.innerHTML = `
+//         <div class="square">
+//             <p class="square-number">${num}</p>
+//         </div>`;
+		
+// 	wrapper.appendChild(square);
+// 	num++;
+// };
